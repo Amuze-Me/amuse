@@ -1,0 +1,14 @@
+name: Step 5, Commit hotfix
+
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+
+steps:
+  - name: release
+    uses: skx/github-action-publish-binaries@release-2.0
+
+                
+                 
+            
