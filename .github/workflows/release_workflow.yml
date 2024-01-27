@@ -1,14 +1,17 @@
-name: Step 5, Commit hotfix
+name: Release
 
 on:
   workflow_dispatch:
   release:
     types: [published]
 
-steps:
-  - name: release
-    uses: skx/github-action-publish-binaries@release-2.0
+jobs:
+  release:
+    runs-on: ubuntu-latest
 
-                
-                 
-            
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.1.1
+
+      - name: Publish binaries
+        uses: skx/github-action-publish-binaries@release-2.0
